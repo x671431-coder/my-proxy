@@ -1,98 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Proxy</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: sans-serif;
-      background: #0d0d0d;
-      color: white;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-    }
-    h1 { font-size: 32px; font-weight: 700; letter-spacing: 1px; }
-    .search-bar {
-      display: flex;
-      align-items: center;
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 32px;
-      padding: 10px 20px;
-      width: 500px;
-      max-width: 90vw;
-      gap: 10px;
-    }
-    .search-bar input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: white;
-      font-size: 16px;
-    }
-    .search-bar input::placeholder { color: #666; }
-    .search-bar button {
-      background: white;
-      color: black;
-      border: none;
-      border-radius: 20px;
-      padding: 6px 18px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .search-bar button:hover { background: #ddd; }
-    #frame-wrap {
-      display: none;
-      width: 90vw;
-      height: 70vh;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #333;
-    }
-    iframe { width: 100%; height: 100%; border: none; }
-    body.browsing { justify-content: flex-start; padding-top: 16px; }
-    body.browsing h1 { font-size: 20px; }
-    body.browsing #frame-wrap { display: block; }
-  </style>
+<title>Unblock County</title>
+<style>
+body{background:#0a0f1f;color:#fff;font-family:sans-serif;margin:0;height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:15px}
+input{background:#1a2338;color:white;padding:18px;width:420px;font-size:20px;border:none;border-radius:12px;outline:none}
+input:focus{box-shadow:0 0 0 3px #00bfff}
+h1{margin:0;color:#00bfff;font-size:48px}
+</style>
 </head>
 <body>
-  <h1>proxy</h1>
-  <div class="search-bar">
-    <input id="url" type="text" placeholder="search anything or enter a URL..." />
-    <button onclick="go()">Go</button>
-  </div>
-  <div id="frame-wrap">
-    <iframe id="frame"></iframe>
-  </div>
-  <script>
-    const BACKEND = 'https://my-proxy-kws7.onrender.com';
-
-    function isURL(str) {
-      return str.startsWith('http://') || str.startsWith('https://') || /^[\w-]+\.[\w-]+/.test(str);
-    }
-
-    function go() {
-      let input = document.getElementById('url').value.trim();
-      let url;
-      if (isURL(input)) {
-        url = input.startsWith('http') ? input : 'https://' + input;
-      } else {
-        url = 'https://duckduckgo.com/?q=' + encodeURIComponent(input);
-      }
-      document.getElementById('frame').src = BACKEND + '/fetch?url=' + encodeURIComponent(url);
-      document.body.classList.add('browsing');
-    }
-
-    document.getElementById('url').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') go();
-    });
-  </script>
+<h1>Unblock County</h1>
+<form action="https://unblock-county.onrender.com/" method="get">
+<input type="text" name="q" placeholder="search or paste url" autofocus>
+</form>
 </body>
 </html>
