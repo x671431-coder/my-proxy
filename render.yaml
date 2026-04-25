@@ -1,0 +1,6 @@
+services:
+- type: web
+  name: unblock-county
+  env: static
+  buildCommand: ""
+  staticPublishPath: .
